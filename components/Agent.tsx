@@ -30,6 +30,15 @@ const Agent = ({
   questions,
 }: AgentProps) => {
   const router = useRouter();
+
+  const initials = userName
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((s) => s[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2) || userName[0]?.toUpperCase() || "?";
+
   const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
   const [messages, setMessages] = useState<SavedMessage[]>([]);
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -201,13 +210,9 @@ const Agent = ({
         {/* User Profile Card */}
         <div className="card-border">
           <div className="card-content">
-            <Image
-              src="/user-avatar.png"
-              alt="profile-image"
-              width={539}
-              height={539}
-              className="rounded-full object-cover size-[120px]"
-            />
+            <div className="size-[120px] rounded-full bg-gradient-to-br from-primary-200/80 to-primary-200/30 flex items-center justify-center text-dark-100 font-bold text-4xl shrink-0 overflow-hidden border-4 border-primary-200/20 shadow-xl shadow-primary-200/5">
+              {initials}
+            </div>
             <h3>{userName}</h3>
           </div>
         </div>

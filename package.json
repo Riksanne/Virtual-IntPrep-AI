@@ -1,7 +1,12 @@
 {
-  "name": "prepwise",
+  "name": "virtual-intprep-ai",
   "version": "0.1.0",
   "private": true,
+  "author": "Riksanne (https://github.com/Riksanne)",
+  "contributors": [
+    "Aryan-05CS (https://github.com/Aryan-05CS)",
+    "Ayushgupta2612 (https://github.com/Ayushgupta2612)"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
